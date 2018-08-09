@@ -1,4 +1,4 @@
-using Base.Test
+using Test
 
 H = 1/sqrt(2)*[1 1;1 -1]
 Q0 = [1,0]
@@ -31,8 +31,8 @@ Z=[1 0; 0 -1]
 
 @show (1/sqrt(2))*Q0 + (1/sqrt(2))*im * Q1
 
-p5=e^(im*5π/6)
-p6=e^(im*π/6)
+p5=ℯ^(im*5π/6)
+p6=ℯ^(im*π/6)
 
 @show abs(p5)
 @show abs(p6)
@@ -46,8 +46,8 @@ p56=[p5/sqrt(2), p6/sqrt(2)]
 
 K=8
 for i in 0:K
-    v1=e^(im*i*π/K)
-    v2=e^(im*(K-i)π/K)
+    v1=ℯ^(im*i*π/K)
+    v2=ℯ^(im*(K-i)π/K)
     vv = [v1/sqrt(2), v2/sqrt(2)]
     print("$i ")
     @show 1.0 ≈ sum(abs2.(vv))
