@@ -12,6 +12,7 @@ Y=[0 -im; im 0]
 Z=[1 0; 0 -1]
 
 H = 1/sqrt(2)*[1 1;1 -1]
+Q(φ) = [1 0; 0 ℯ^(φ*im)]
 
 isunitary(x) = (x ≈ x')
 isprovability(x) = (sum(abs2.(x)) ≈ 1.0)
