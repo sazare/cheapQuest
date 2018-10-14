@@ -1,10 +1,14 @@
 module Qubit
 
-export ket, X,Y,Z,H,isunitary, isprovability, randumqubit
+export ket, bra, X,Y,Z,H,isunitary, isprovability, randumqubit
 
 function ket(x::Number)
     x == 0 && return complex([1,0])
     x == 1 && return complex([0,1])
+end
+function bra(x::Number)
+    x == 0 && return complex([1 0])
+    x == 1 && return complex([0 1])
 end
 
 X=[0 1;1 0]
@@ -28,8 +32,8 @@ function randumqubit(n::Number)
     map(x->randumqubit(), 1:n)
 end
 
-function observe(qb)
-
+function observe(qb, e)
+  e*qb
 end
 
 end
